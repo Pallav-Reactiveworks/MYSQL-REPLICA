@@ -13,6 +13,12 @@
 #
 # A replication user (actually created on both master and slaves)
 #
+if [[ `service mysql status | grep running ` -eq 0 ]]
+then
+echo mysql running
+else
+service mysql start
+
 if [ "$MYSQL_REPLICA_USER" ]; then
         if [ -z "$MYSQL_REPLICA_PASS" ]; then
                 echo >&2 'error: MYSQL_REPLICA_USER set, but MYSQL_REPLICA_PASS not set'
