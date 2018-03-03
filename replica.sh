@@ -18,7 +18,7 @@ then
 echo mysql running
 else
 service mysql start
-
+fi
 if [ "$MYSQL_REPLICA_USER" ]; then
         if [ -z "$MYSQL_REPLICA_PASS" ]; then
                 echo >&2 'error: MYSQL_REPLICA_USER set, but MYSQL_REPLICA_PASS not set'
